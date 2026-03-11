@@ -2,7 +2,7 @@
   <img src="design/logo.svg" alt="Release Drafter Logo" width="450" />
 </h1>
 
-<p align="center">Drafts your next release notes as pull requests are merged into master. Built with <a href="https://github.com/probot/probot">Probot</a>.</p>
+<p align="center">Drafts your next release notes as pull requests are merged into master. Built with <a href="https://github.com/Unity-Billal-mesloub/probot">Probot</a>.</p>
 
 ---
 
@@ -152,7 +152,7 @@ You can configure Release Drafter using the following key in your `.github/relea
 | `history-limit`            | Optional | Size of the pagination window when walking the repo. Can avoid erratic 502s from Github. Default: `15`                                                                                                    |
 | `initial-commits-since`    | Optional | When drafting your first release, limit the amount of scanned commits. Expects an ISO 8601 date, ex: `"2025-06-18T10:29:51Z"`. Default: `""` (unlimited)                                                  |
 
-Release Drafter also supports [Probot Config](https://github.com/probot/probot-config), if you want to store your configuration files in a central repository. This allows you to share configurations between projects, and create a organization-wide configuration file by creating a repository named `.github` with the file `.github/release-drafter.yml`.
+Release Drafter also supports [Probot Config](https://github.com/Unity-Billal-mesloub/probot-config), if you want to store your configuration files in a central repository. This allows you to share configurations between projects, and create a organization-wide configuration file by creating a repository named `.github` with the file `.github/release-drafter.yml`.
 
 ## Template Variables
 
@@ -228,8 +228,8 @@ You can use any of the following variables in `change-template`:
 | `$TITLE`         | The title of the pull request, e.g. `Add alien technology`. Any characters excluding @ and # matching `change-title-escapes` will be prepended with a backslash so that they will appear verbatim instead of being interpreted as markdown format characters. @s and #s if present in `change-title-escapes` will be appended with an HTML comment so that they don't become mentions. |
 | `$AUTHOR`        | The pull request author’s username, e.g. `gracehopper`.                                                                                                                                                                                                                                                                                                                                |
 | `$BODY`          | The body of the pull request e.g. `Fixed spelling mistake`.                                                                                                                                                                                                                                                                                                                            |
-| `$URL`           | The URL of the pull request e.g. `https://github.com/octocat/repo/pull/42`.                                                                                                                                                                                                                                                                                                            |
-| `$BASE_REF_NAME` | The base name of of the base Ref associated with the pull request e.g. `master`.                                                                                                                                                                                                                                                                                                       |
+| `$URL`           | The URL of the pull request e.g. `https://github.com/Unity-Billal-mesloub/octocat.github.io`.                                                                                                                                                                                                                                                                                                            |
+| `$BASE_REF_NAME` | The base name of of the base Ref associated with the pull request e.g. `main`.                                                                                                                                                                                                                                                                                                       |
 | `$HEAD_REF_NAME` | The head name of the head Ref associated with the pull request e.g. `my-bug-fix`.                                                                                                                                                                                                                                                                                                      |
 
 ## References
@@ -267,7 +267,7 @@ Pull requests with the label "feature" or "fix" will now be grouped together:
 <img src="design/screenshot-2.png" alt="Screenshot of generated draft release with categories" width="586" />
 
 Adding such labels to your PRs can be automated by using the embedded Autolabeler functionality (see below),
-[PR Labeler](https://github.com/TimonVS/pr-labeler-action) or [Probot Auto Labeler](https://github.com/probot/autolabeler).
+[PR Labeler](https://github.com/Unity-Billal-mesloub).
 
 Optionally you can add a `collapse-after` entry to your category item, if the category has more than the defined `collapse-after` pull requests then it will show all pull requests collapsed for that category. Append the `collapse-after` integer to your category as following:
 
@@ -409,7 +409,7 @@ The Release Drafter GitHub Action accepts a number of optional inputs directly i
 | `name`                  | The name that will be used in the GitHub release that's created or updated. This will override any `name-template` specified in your `release-drafter.yml` if defined.                                                                                                                                                                                             |
 | `tag`                   | The tag name to be associated with the GitHub release that's created or updated. This will override any `tag-template` specified in your `release-drafter.yml` if defined.                                                                                                                                                                                         |
 | `version`               | The version to be associated with the GitHub release that's created or updated. This will override any version calculated by the release-drafter.                                                                                                                                                                                                                  |
-| `publish`               | A boolean indicating whether the release being created or updated should be immediately published. This may be useful if the output of a previous workflow step determines that a new version of your project has been (or will be) released, as with [`salsify/action-detect-and-tag-new-version`](https://github.com/salsify/action-detect-and-tag-new-version). |
+| `publish`               | A boolean indicating whether the release being created or updated should be immediately published. This may be useful if the output of a previous workflow step determines that a new version of your project has been (or will be) released, as with [`salsify/action-detect-and-tag-new-version`](https://github.com/Unity-Billal-mesloub/action-detect-and-tag-new-version). |
 | `prerelease`            | Whether to draft a prerelease, with changes since another prerelease (if applicable). Default `false`.                                                                                                                                                                                                                                                             |
 | `prerelease-identifier` | A string indicating an identifier (alpha, beta, rc, etc), to increment the prerelease version. This automatically enables `prerelease` if not already set to `true`. Default `''`.                                                                                                                                                                                 |
 | `include-pre-releases`  | When looking for the last published release to scan changes up-to, include pre-releases. Has no effect if using `prerelease: true` (already enabled). Default `false`.                                                                                                                                                                                             |
@@ -423,7 +423,7 @@ The Release Drafter GitHub Action accepts a number of optional inputs directly i
 
 ## Action Outputs
 
-The Release Drafter GitHub Action sets a couple of outputs which can be used as inputs to other Actions in the workflow ([example](https://github.com/actions/upload-release-asset#example-workflow---upload-a-release-asset)).
+The Release Drafter GitHub Action sets a couple of outputs which can be used as inputs to other Actions in the workflow ([example](https://github.com/Unity-Billal-mesloub/upload-release-asset#example-workflow---upload-a-release-asset)).
 
 | Output             | Description                                                                                                                                                                                                                   |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -431,7 +431,7 @@ The Release Drafter GitHub Action sets a couple of outputs which can be used as 
 | `name`             | The name of this release.                                                                                                                                                                                                     |
 | `tag_name`         | The name of the tag associated with this release.                                                                                                                                                                             |
 | `body`             | The body of the drafted release, useful if it needs to be included in files.                                                                                                                                                  |
-| `html_url`         | The URL users can navigate to in order to view the release. i.e. `https://github.com/octocat/Hello-World/releases/v1.0.0`.                                                                                                    |
+| `html_url`         | The URL users can navigate to in order to view the release. i.e.                                                                                                     |
 | `upload_url`       | The URL for uploading assets to the release, which could be used by GitHub Actions for additional uses, for example the [`@actions/upload-release-asset GitHub Action`](https://www.github.com/actions/upload-release-asset). |
 | `resolved_version` | Version resolved by [Version Resolver](#version-resolver). i.e. `6.3.1`                                                                                                                                                       |
 | `major_version`    | Major part of resolved version by [Version Resolver](#version-resolver). i.e. `6` for version `6.3.1`                                                                                                                         |
