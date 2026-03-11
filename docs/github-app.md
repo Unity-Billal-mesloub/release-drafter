@@ -1,10 +1,10 @@
 # Release Drafter GitHub App [![NPM package](https://img.shields.io/npm/v/release-drafter-github-app.svg)](https://www.npmjs.com/package/release-drafter-github-app)
 
-If you're unable to use GitHub Actions, you can use the now deprecated [Release Drafter GitHub App](https://github.com/apps/release-drafter). Keep in mind that the Release Drafter GitHub App won't be receiving any new features (see: [#335](https://github.com/release-drafter/release-drafter/issues/335)).
+If you're unable to use GitHub Actions, you can use the now deprecated [Release Drafter GitHub App](https://github.com/Unity-Billal-mesloub/release-drafter). Keep in mind that the Release Drafter GitHub App won't be receiving any new features (see: [#335](https://github.com/Unity-Billal-mesloub/release-drafter/issues/)).
 
 ## Usage
 
-Install the [Release Drafter GitHub App](https://github.com/apps/release-drafter) and choose the repositories for which you want releases automatically created.
+Install the [Release Drafter GitHub App](https://github.com/Unity-Billal-mesloub/release-drafter) and choose the repositories for which you want releases automatically created.
 
 ## Installation permissions
 
